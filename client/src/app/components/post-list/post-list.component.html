@@ -1,0 +1,23 @@
+<div class="container">
+  <div class="row">
+    <table class="table">
+    <tr>
+      <th>Serial no.</th>
+      <th>Title</th>
+      <th>Content</th>
+      <th>Posted on</th>
+      <th>Action</th>
+    </tr>
+    <tr *ngFor="let post of posts; let i=index;">
+      <td>{{i}}</td>
+      <td>{{post.title}}</td>
+      <td>{{post.content}}</td>
+      <td>{{post.posted | date}}</td>
+      <td>
+        <button class="btn btn-danger" (click)="delPost(post._id)">Delete</button>&nbsp;&nbsp;
+        <a [routerLink]="['/post-edit/', post._id]"><button class="btn btn-primary">Edit</button></a>
+         </td>
+    </tr>
+    </table>
+  </div>
+</div>

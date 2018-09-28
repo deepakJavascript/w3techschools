@@ -1,0 +1,16 @@
+<div class="row">
+  <div class="col-md-6 offset-3" style="margin-top:5%;">
+      <form [formGroup]="loginForm" (ngSubmit)="submitLogin()">
+         <div class="form-group">
+          <label for="email">Valid Email*</label>
+          <input type="email" class="form-control" formControlName="email" required>
+       </div>
+        <div class="form-group">
+      <label for="password">Password*</label>
+      <input type="password" class="form-control" formControlName="password" required>
+   </div>
+          <button [disabled]="!loginForm.valid" type="submit" class="btn btn-primary">Login</button>
+      </form>
+  </div>
+</div>
+
